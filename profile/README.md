@@ -3,7 +3,7 @@
 Project for training purposes.
 
 Scope:
-- webapp, simple GUI written in Vue+Node
+- [webapp](https://github.com/illegal-dump/webapp), simple GUI written in Vue+Node
 - ...
 - all above deployed on kubernetes cluster locally and on AWS
 
