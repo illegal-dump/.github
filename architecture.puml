@@ -1,0 +1,49 @@
+@startuml
+skinparam defaultTextAlignment center
+
+' ---
+
+artifact Webapp {
+    [webapp\n(vue)] as webapp
+}
+
+' [mobileapp] as mobileapp
+
+[api-gateway\n(NGINX Kubernetes Gateway)] as apigateway
+
+artifact Coordinates {
+    ' [coordinates\n(kotlin+quarkus)] as coordinates
+    ' [coordinates reporter] as coordinatesreporter
+    [coordinates mock\n(mock-server)] as coordinatesmock
+    [coordinates mock2\n(mock-server)] as coordinatesmock2
+    ' database "database\n(PostgreSQL)" as database {
+        
+    ' }
+}
+
+' artifact Monitoring {
+    ' [prometheus] as prometheus
+    ' [grafana] as grafana
+' }
+
+' queue [events\n(kafka)] as events{
+    ' 
+' }
+
+' ---
+
+webapp -right-> apigateway
+
+' apigateway --> coordinatesreporter
+apigateway --> coordinatesmock : 80% of traffic\n(to check canary\ndeployments)
+apigateway --> coordinatesmock2 : 20% of traffic\n(to check canary\ndeployments)
+' apigateway --> coordinates : 80% of traffic
+
+' coordinates --> database
+' coordinates -left-> events
+
+' mobileapp --> apigateway 
+
+' coordinatesreporter -left-> events
+
+@enduml
