@@ -1,14 +1,15 @@
 # About
 
-Project for kubernetes training purposes.
+Project for kubernetes training purposes. 
 
 Scope:
 - [webapp](https://github.com/illegal-dump/webapp), simple GUI written in Vue+Node, simple mock
 - [api-gateway](https://github.com/illegal-dump/api-gateway), set of ymls for NGINX Kubernetes Gateway deployment
-- [k8](https://github.com/illegal-dump/.github/tree/main/k8) - complete set of ymls for illegal-dump project
 - ...
-- all above deployed on kubernetes cluster locally and on AWS
+- [k8](https://github.com/illegal-dump/.github/tree/main/k8) - complete set of ymls for illegal-dump project (all above projects)
 
+
+As a part of training deployment will take place locally (minikube) and on AWS.
 
 <br/><br/><br/>
 
