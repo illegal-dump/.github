@@ -62,7 +62,7 @@ kubectl apply -f k8/
 
 and go to [http://minikube.local:30080](http://minikube.local:30080)
 
-![..](doc/img/screeenshots.gif)
+![..](https://github.com/illegal-dump/.github/blob/main/doc/img/screeenshots.gif)
 
 <br/><br/><br/>
 
