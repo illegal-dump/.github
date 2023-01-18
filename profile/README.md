@@ -1,4 +1,4 @@
-# Aboutheight:32px
+# About
 
 Project for kubernetes <img src="https://kubernetes.io//images/favicon.png" style="height:32px"/> training purposes. 
 
