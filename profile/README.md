@@ -62,7 +62,7 @@ kubectl apply -f k8/
 
 and go to [http://minikube.local:30080](http://minikube.local:30080)
 
-![..](doc/../../doc/screeenshots.gif)
+![..](doc/img/screeenshots.gif)
 
 <br/><br/><br/>
 
