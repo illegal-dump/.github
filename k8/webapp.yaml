@@ -18,6 +18,12 @@ spec:
         image: 0i99/illegal-dump-webapp
         ports:
         - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 2
+          periodSeconds: 10
             
 
 ---
