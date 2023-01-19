@@ -17,14 +17,15 @@ artifact Coordinates {
     [coordinates\n(kotlin+quarkus)] as coordinates
     ' [coordinates reporter] as coordinatesreporter
     [coordinates mock\n(mock-server)] as coordinatesmock
+    [pgadmin] as pgadmin
     database "database\n(PostgreSQL)" as database {
     }
 }
 
-' artifact Monitoring {
-    ' [prometheus] as prometheus
-    ' [grafana] as grafana
-' }
+artifact Monitoring {
+    [prometheus] as prometheus
+    [grafana] as grafana
+}
 
 ' queue [events\n(kafka)] as events{
     ' 
@@ -34,13 +35,14 @@ artifact Coordinates {
 
 ' ---
 
-webapp -right-> apigateway
+webapp --> apigateway
 
 ' apigateway --> coordinatesreporter
 apigateway --> coordinatesmock : 20% of traffic\n(to check canary\ndeployments)
 apigateway --> coordinates : 80% of traffic
 
 coordinates --> database
+pgadmin --> database
 ' coordinates -left-> events
 
 ' mobileapp --> apigateway 
